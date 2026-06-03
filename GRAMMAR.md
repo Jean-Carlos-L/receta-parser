@@ -147,21 +147,26 @@ Para la instrucción:
 La derivación sería:
 
 ```text
-INS
-└── VP
-    ├── V
-    │   └── cocinar
-    └── COMPS
-        ├── NP
-        │   ├── DET
-        │   │   └── la
-        │   ├── N
-        │   │   └── cebolla
-        │   └── ADJ
-        │       └── picada
-        └── PARAM
-            ├── durante
-            ├── NUM
-            │   └── 10
-            └── minutos
+S
+└── LISTA_INS
+    ├── INS
+    │   └── VP
+    │       ├── V
+    │       │   └── cocinar
+    │       └── COMPS
+    │           ├── COMP
+    │           │   └── NP
+    │           │       ├── DET
+    │           │       │   └── la
+    │           │       ├── N
+    │           │       │   └── cebolla
+    │           │       └── ADJ
+    │           │           └── picada
+    │           └── COMP
+    │               └── PARAM
+    │                   ├── durante
+    │                   ├── NUM
+    │                   │   └── 10
+    │                   └── minutos
+    └── <EOS>
 ```
