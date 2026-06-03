@@ -1,0 +1,5 @@
+level = {
+    "bajo",
+    "medio",
+    "alto"
+}

@@ -1,0 +1,37 @@
+# verbos.py
+
+verbos = {
+    "mezclar", "mezcla",
+    "agregar", "agrega",
+    "añadir", "añade",
+    "incorporar", "incorpora",
+    "cortar", "corta",
+    "picar", "pica",
+    "trocear", "trocea",
+    "pelar", "pela",
+    "sofreir", "sofrie",
+    "freir", "frie",
+    "fritar", "frita",
+    "hervir", "hierve",
+    "cocinar", "cocina",
+    "hornear", "hornea",
+    "batir", "bate",
+    "moler", "muele",
+    "machacar", "machaca",
+    "rallar", "ralla",
+    "adobar", "adoba",
+    "sazonar", "sazona",
+    "condimentar", "condimenta",
+    "dorar", "dora",
+    "colocar", "coloca",
+    "servir", "sirve",
+    "empanizar", "empaniza",
+    "rebozar", "reboza",
+    "poner", "pon","ponga",
+    "preparar", "prepara",
+    "amasar", "amasa",
+    "rectificar", "rectifica",
+    "dejar", "deja",
+    "cubrir", "cubre"
+
+}
