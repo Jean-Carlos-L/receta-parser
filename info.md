@@ -1,4 +1,4 @@
-# Informe del proyecto — DGS para recetas vallecaucanas
+# Informe del proyecto — DCG para recetas vallecaucanas
 
 ## Estructura final del proyecto
 
@@ -6,7 +6,7 @@
 receta-parser/
 │
 ├── core/
-│   ├── dgs.py              # DGS: unificación + concordancia
+│   ├── dcg.py              # DCG: unificación + concordancia
 │   ├── parser.py           # Parser recursivo descendente
 │   ├── node.py             # Nodo del árbol sintáctico
 │   ├── printer.py          # Impresión del árbol de derivación
@@ -31,19 +31,19 @@ receta-parser/
 ├── recipes/
 │   └── recetas.py          # 13 recetas vallecaucanas
 │
-├── tests_recetas_dgs.py    # Pruebas: parseo de recetas completas (16 casos)
+├── tests_recetas_dcg.py    # Pruebas: parseo de recetas completas (16 casos)
 ├── tests_concordancia.py   # Pruebas: concordancia género/número (42 casos)
 ├── main.py                 # Punto de entrada
 ├── info.md                 # Este documento
-├── PLAN_DGS.md             # Plan original de implementación
+
 └── SIGUIENTE_PASO.md       # Extensiones futuras
 ```
 
 ---
 
-## 1. ¿Qué es un DGS y cómo funciona aquí?
+## 1. ¿Qué es un DCG y cómo funciona aquí?
 
-Un DGS (Definite Clause Grammar / Gramática de Cláusulas Definidas) extiende una gramática libre de contexto añadiendo **rasgos lingüísticos** y **unificación** para validar restricciones como concordancia de género y número.
+Un DCG (Definite Clause Grammar / Gramática de Cláusulas Definidas) extiende una gramática libre de contexto añadiendo **rasgos lingüísticos** y **unificación** para validar restricciones como concordancia de género y número.
 
 En este proyecto, cada palabra del léxico tiene asociado un diccionario de rasgos:
 
@@ -66,9 +66,9 @@ LEXICO_RASGOS = {
 
 ## 2. Separación en archivos
 
-Originalmente el DGS estaba mezclado en varios archivos. Se separó en módulos con responsabilidades claras.
+Originalmente el DCG estaba mezclado en varios archivos. Se separó en módulos con responsabilidades claras.
 
-### 2.1 `core/dgs.py` — núcleo del DGS
+### 2.1 `core/dcg.py` — núcleo del DCG
 
 Contiene todo lo relacionado con el sistema de rasgos y unificación:
 
@@ -132,7 +132,7 @@ def unificar_concordancia(hijos):
 Antes contenía la lógica de unificación inline. Ahora solo importa lo que necesita:
 
 ```python
-from core.dgs import TERMINALES_CATEGORIA, SIMBOLOS_CONCORDANCIA, unificar_concordancia
+from core.dcg import TERMINALES_CATEGORIA, SIMBOLOS_CONCORDANCIA, unificar_concordancia
 ```
 
 Y la validación de concordancia se reduce a:
@@ -146,7 +146,7 @@ if simbolo in SIMBOLOS_CONCORDANCIA:
 
 ### 2.3 Archivos eliminados
 
-- `core/unification.py` → se fusionó dentro de `core/dgs.py`
+- `core/unification.py` → se fusionó dentro de `core/dcg.py`
 
 ---
 
@@ -308,12 +308,12 @@ Las reglas léxicas (`V`, `N`, `DET`, etc.) se generan dinámicamente desde `LEX
 
 ## 7. Pruebas
 
-### 7.1 `tests_recetas_dgs.py`
+### 7.1 `tests_recetas_dcg.py`
 
 Prueba que las recetas completas se parseen correctamente:
 
 ```bash
-python3 tests_recetas_dgs.py
+python3 tests_recetas_dcg.py
 # Recetas: 16/16 ✅
 ```
 
@@ -374,8 +374,8 @@ Cada caso verifica que un NP específico sea aceptado o rechazado según su conc
 2. Agregar verbos nuevos a `lexicon/verbos.py` (si es necesario)
 3. Agregar adjetivos nuevos a `lexicon/adjetivos.py` (si es necesario)
 4. Escribir la receta en `recipes/recetas.py` en el mismo formato
-5. Agregar el caso de prueba en `tests_recetas_dgs.py`
-6. Ejecutar `python3 tests_recetas_dgs.py` para verificar
+5. Agregar el caso de prueba en `tests_recetas_dcg.py`
+6. Ejecutar `python3 tests_recetas_dcg.py` para verificar
 
 **Reglas para que una receta sea parseable:**
 - Cada instrucción en una línea separada

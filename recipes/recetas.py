@@ -4,7 +4,7 @@ recetas = {
 
     "sancocho": """
 
-    primero pon un gallina cortada en una olla grande
+    primero pon una gallina cortada en una olla grande
     agrega suficiente agua
     agrega sal
     cocina a fuego medio durante cuarenta minutos

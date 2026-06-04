@@ -1,6 +1,6 @@
 from grammar.gramatica import gramatica
 from core.node import Nodo
-from core.dgs import TERMINALES_CATEGORIA, SIMBOLOS_CONCORDANCIA, unificar_concordancia
+from core.dcg import TERMINALES_CATEGORIA, SIMBOLOS_CONCORDANCIA, unificar_concordancia
 from lexicon.rasgos import LEXICO_RASGOS
 from core.tokenizer import normalize_token
 

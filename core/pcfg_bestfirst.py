@@ -2,7 +2,7 @@ import heapq
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Sequence, Tuple
 
-from core.dgs import SIMBOLOS_CONCORDANCIA, unificar_concordancia
+from core.dcg import SIMBOLOS_CONCORDANCIA, unificar_concordancia
 from core.node import Nodo
 from core.tokenizer import normalize_token
 from grammar.gramatica import gramatica
