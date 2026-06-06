@@ -1,3 +1,22 @@
+
+# Construcción de sistema de PLN para el análisis de recetas de cocina vallecaucanas
+
+**Fecha:** 06/06/2026
+
+**Curso:** Procesamiento del Lenguaje Natural
+
+---
+
+## Integrantes del Grupo
+
+| Nombre Completo           | Código  | Rol           | Correo Electrónico                 |
+| ------------------------- | ------- | ------------- | ---------------------------------- |
+| Juan Camilo Garcia        | 2259416 | Colaborador   | [juan.garcia.saenz@correounivalle.edu.co] |
+| Jhojan Serna Henao        | 2259504 | Colaborador   | [jhojan.serna@correounivalle.edu.co] |
+| Jean Carlos Lerma         |  | Colaborador   | [jean.lerma@correounivalle.edu.co] |
+
+---
+
 # Receta Parser
 
 Analizador sintáctico para recetas de cocina vallecaucanas basado en gramáticas libres de contexto, unificación de rasgos y parsing probabilístico.
@@ -318,3 +337,23 @@ Total: 42/42
 6. **Cobertura léxica acotada**: El léxico está limitado a aproximadamente 200 palabras del dominio culinario vallecaucano. Palabras fuera de este vocabulario causan fallos de parseo.
 
 7. **Dependencia de matplotlib**: La visualización gráfica del árbol requiere matplotlib. En entornos sin interfaz gráfica (servidores, SSH), esta funcionalidad no está disponible.
+
+
+## Referencias
+
+- Jurafsky, D., & Martin, J. H. (2023). *Speech and Language Processing* (3rd ed. draft). Stanford University. https://web.stanford.edu/~jurafsky/slp3/
+  - Cap. 12: Formal Grammars of English (CFG, parsing)
+  - Cap. 13: Constituency Parsing (CYK, Earley, probabilistic parsing)
+  - Cap. 15: Transition-Based Parsing
+
+- Gazdar, G., Klein, E., Pullum, G., & Sag, I. (1985). *Generalized Phrase Structure Grammar*. Harvard University Press.
+  — Base teórica de los sistemas de rasgos y unificación.
+
+- Shieber, S. M. (1986). *An Introduction to Unification-Based Approaches to Grammar*. CSLI Publications.
+  — Fundamento del mecanismo de unificación de DAGs implementado en `core/dgs.py`.
+
+- Manning, C., & Schütze, H. (1999). *Foundations of Statistical Natural Language Processing*. MIT Press.
+  — Cap. 11: Probabilistic Context Free Grammars (PCFG).
+
+- Russell, S., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson.
+  — Cap. 3: Best-First Search, A\* — base del algoritmo implementado en `core/pcfg_bestfirst.py`.
